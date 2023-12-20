@@ -14,10 +14,10 @@ function App (){
         <nav>
           <ul>
             <li>
-              <Link to ="/">Home</Link>
+              <Link to ="/"><a>Home</a></Link>
             </li>
             <li>
-              <Link to ="/todo">할일 목록</Link>
+              <Link to ="/todo"><a>할일 목록</a></Link>
             </li>
           </ul>
         </nav>

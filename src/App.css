@@ -57,10 +57,10 @@ ul {
 li {
   margin: 8px 0;
   padding: 8px;
-  border: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color:black;
 }
 
 button {
@@ -79,6 +79,9 @@ body {
 }
 
 header {
+  background-image: url('./img/crayon.png');
+  background-repeat : no-repeat;
+  background-size : contain;
   background-color: #ffd8d8;
   color: white;
   padding: 1rem;
@@ -97,7 +100,7 @@ nav li {
 }
 
 nav a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
