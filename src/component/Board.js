@@ -23,12 +23,13 @@ function Board(){
     const addPost = () => {
         setPosts([...posts,newPost]);
         setNewPost('');
+        localStorage.setItem('posts',JSON.stringify([...posts,newPost]));
     }
 
          // 입력된 게시글을 로컬 스토리지에 저장
         // localStorage 밑에 Item과 setItem 존재함
         // 'posts' 키에 현재 게시글 목록과 새로운 게시글을 추가한 배열을 JSON 문자열로 변환해서 저장
-         localStorage.setItem('posts',JSON.stringify([...posts,newPost]));
+         
 
          const deletePost = (index) => {
             const removePost = [...posts];
@@ -45,15 +46,18 @@ function Board(){
                 <textarea
                     placeholder="게시글을 입력하세요." value={newPost} onChange={(e) => setNewPost(e.target.value)}
                 >
-                </textarea>
-                <br />
+                </textarea><br />
+                
                 <button onClick={addPost}>게시글 추가</button>
+              
             </div>
             <div>
                 <h2>게시글 목록</h2>
                 <ul>
                     {posts.map((post,index) => (
-                        <li key={index}>{post}</li>
+                        <li key={index}>{post}
+                        <button onClick={() => deletePost(index)}>삭제</button>
+                        </li>
                     ))}
                 </ul>
             </div>
